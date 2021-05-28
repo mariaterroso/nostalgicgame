@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -3403559810464188601}
   m_Layer: 0
   m_Name: Colectable
-  m_TagString: Untagged
+  m_TagString: colectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,3 +106,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6731667e45ef1d84eb09a14469fa9b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duracao: 2

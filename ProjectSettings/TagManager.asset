@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - colectable
+  - Coletavel
+  - DisparoAmigo
+  - DisparoInimigo
+  - Destrutivel
+  - Indestrutivel
   layers:
   - Default
   - TransparentFX
