@@ -88,7 +88,7 @@ public class Player : MonoBehaviour
     {
         pontos++;
         pontosTexto.text = "Pontos" + pontos;
-        if (GameObject.FindGameObjectsWithTag("Coletavel").Length <= 0)
+        if (GameObject.FindGameObjectsWithTag("Colectable").Length <= 0)
         {
             vitoriatexto.SetActive(true);
             Time.timeScale = 0f;
