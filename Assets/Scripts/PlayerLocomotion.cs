@@ -52,6 +52,9 @@ public class PlayerLocomotion : MonoBehaviour
         if (playerManager.isInteracting)
             return;
 
+        if (isJumping)
+            return;
+
         HandleMovement();
         HandleRotation();
     }

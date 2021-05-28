@@ -116,6 +116,17 @@
                 {
                     "name": "",
                     "id": "e37a0ba5-09e3-4809-a3d1-34501815b749",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "B",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "61900de7-9232-4003-bc6f-3c3a644f95e6",
                     "path": "<Keyboard>/shift",
                     "interactions": "",
                     "processors": "",
