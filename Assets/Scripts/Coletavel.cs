@@ -5,26 +5,23 @@ using UnityEngine;
 public class Coletavel : MonoBehaviour
 {
 
+    [SerializeField] float duracao = 2f;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        Destroy(gameObject, duracao);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Rotate(new Vector3(10, 30, 45) * Time.deltaTime);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnDestroy()
     {
-        if (tag == "Coletavel")
-        {
-            if (collision.gameObject.tag == "Player")
-            {
-                Destroy(gameObject);
-            }
-        }
+        if (GameObject.FindGameObjectWithTag("MainCamera"))
+            GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Jogo>().instanciar = true;
     }
 }
