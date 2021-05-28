@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -22,9 +21,6 @@ public class Player : MonoBehaviour
 
     Quaternion jogadororeintacaooriginal;
 
-    [SerializeField]
-    int vida = 3;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -33,54 +29,26 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
-   
+    void Update()
+    {
 
-    void OnTriggerEnter(Collider other)
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(fogo, transform.position, transform.rotation);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Coletavel"))
         {
             other.gameObject.SetActive(false);
             AtualizaPontos();
         }
-        if (other.CompareTag("Respawn"))
+        if(other.CompareTag("Respawn"))
         {
             transform.position = jogadorposicaooriginal;
             transform.rotation = jogadororeintacaooriginal;
-        }
-
-        if (tag == "Player")
-        {
-            vida--;
-            if (vida == 0)
-            {
-                if (other.gameObject.tag == "Indestrutivel")
-                {
-                    Destroy(gameObject);
-                    SceneManager.LoadScene("GameOver");
-
-                }
-            }
-        }
-
-        if (other.CompareTag("Som"))
-        {
-            other.GetComponent<AudioSource>().Play();
-        }
-        if (other.CompareTag("SomColetavel"))
-        {
-            other.GetComponent<AudioSource>().Play();
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Som"))
-        {
-            other.GetComponent<AudioSource>().Stop();
-        }
-        if (other.CompareTag("SomColetavel"))
-        {
-            other.GetComponent<AudioSource>().Stop();
         }
     }
 

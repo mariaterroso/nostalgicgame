@@ -5,15 +5,11 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     InputManager inputManager;
-    Animator animator;
     CameraManager cameraManager;
     PlayerLocomotion playerLocomotion;
 
-    public bool isInteracting;
-
     private void Awake()
     {
-        animator = GetComponent<Animator>();
         inputManager = GetComponent<InputManager>();
         cameraManager = FindObjectOfType<CameraManager>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
@@ -31,10 +27,6 @@ public class PlayerManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        cameraManager.HandleAllCameraMovement();
-
-        isInteracting = animator.GetBool("isInteracting");
-        playerLocomotion.isJumping = animator.GetBool("isJumping");
-        animator.SetBool("isGrounded", playerLocomotion.isGrounded);
+        cameraManager.FollowTarget();
     }
 }
