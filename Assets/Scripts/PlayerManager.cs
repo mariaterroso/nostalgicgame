@@ -8,17 +8,9 @@ public class PlayerManager : MonoBehaviour
     Animator animator;
     CameraManager cameraManager;
     PlayerLocomotion playerLocomotion;
-    Vector3 jogadorPosicaoOriginal;
-    Quaternion jogadorOrientacaoOriginal;
 
     public bool isInteracting;
     public bool isUsingRootMotion;
-
-    void Start()
-    {
-        jogadorPosicaoOriginal = transform.position;
-        jogadorOrientacaoOriginal = transform.rotation;
-    }
 
     private void Awake()
     {
@@ -48,15 +40,4 @@ public class PlayerManager : MonoBehaviour
         animator.SetBool("isGrounded", playerLocomotion.isGrounded);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Respawn"))
-        {
-            transform.position = jogadorPosicaoOriginal;
-            transform.rotation = jogadorOrientacaoOriginal;
-        } else if (other.CompareTag("colectable"))
-        {
-            Destroy(other.gameObject);
-        }
-    }
 }
