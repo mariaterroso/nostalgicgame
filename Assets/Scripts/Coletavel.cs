@@ -5,7 +5,7 @@ using UnityEngine;
 public class Coletavel : MonoBehaviour
 {
 
-    [SerializeField] float duracao = 2f;
+    [SerializeField] float duracao = 10f;
 
     // Start is called before the first frame update
     void Start()
@@ -23,5 +23,16 @@ public class Coletavel : MonoBehaviour
     {
         if (GameObject.FindGameObjectWithTag("MainCamera"))
             GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Jogo>().instanciar = true;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (tag == "Coletavel")
+        {
+            if (collision.gameObject.tag == "Player")
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }
