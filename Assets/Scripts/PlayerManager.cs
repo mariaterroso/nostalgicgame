@@ -54,6 +54,9 @@ public class PlayerManager : MonoBehaviour
         {
             transform.position = jogadorPosicaoOriginal;
             transform.rotation = jogadorOrientacaoOriginal;
+        } else if (other.CompareTag("colectable"))
+        {
+            Destroy(other.gameObject);
         }
     }
 }

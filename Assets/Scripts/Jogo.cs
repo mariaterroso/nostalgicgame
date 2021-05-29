@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Jogo : MonoBehaviour
 {
-    [SerializeField] GameObject colectable;
+    [SerializeField] GameObject Colectable;
     [SerializeField] Transform[] coordenadas = new Transform[5];
 
     private int sorteado = 0;
@@ -29,7 +29,7 @@ public class Jogo : MonoBehaviour
     void InstanciaColectavel()
     {
         sorteado = sorteio(0, 4);
-        Instantiate(colectable, coordenadas[sorteado].position, Quaternion.identity);
+        Instantiate(Colectable, coordenadas[sorteado].position, Quaternion.identity);
     }
 
     int sorteio(int minimo, int maximo)

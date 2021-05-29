@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8582345472678950302}
   - component: {fileID: 8582345472678950303}
   - component: {fileID: 8582345472678950296}
-  - component: {fileID: -3403559810464188601}
+  - component: {fileID: -2495340952538658460}
   m_Layer: 0
   m_Name: Colectable
   m_TagString: colectable
@@ -94,7 +94,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-3403559810464188601
+--- !u!114 &-2495340952538658460
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,4 +106,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6731667e45ef1d84eb09a14469fa9b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duracao: 25
+  duracao: 2
