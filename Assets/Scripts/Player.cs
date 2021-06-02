@@ -28,6 +28,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     int vida = 3;
 
+    [SerializeField] GameObject porta;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +51,13 @@ public class Player : MonoBehaviour
         {
             transform.position = jogadorposicaooriginal;
             transform.rotation = jogadororeintacaooriginal;
+
+            porta.SetActive(true);
+        }
+        else if (other.CompareTag("Coletavel"))
+        {
+            Destroy(other.gameObject);
+            porta.SetActive(false);
         }
 
         if (tag == "Player")
