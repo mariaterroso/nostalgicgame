@@ -10,6 +10,7 @@ TagManager:
   - DisparoInimigo
   - Destrutivel
   - Indestrutivel
+  - Porta
   layers:
   - Default
   - TransparentFX
