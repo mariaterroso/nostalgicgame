@@ -5,10 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class loadLevel : MonoBehaviour
 {
-    [SerializeField] int iLevelToLoad;
-    [SerializeField] int sLevelToLoad;
-
-    public bool useIntegerToLoadLevel = false;
 
     // Start is called before the first frame update
     void Start()
@@ -22,25 +18,13 @@ public class loadLevel : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision gameObjectInformation)
     {
-        GameObject collisionGameObject = collision.gameObject;
+        if (gameObjectInformation.gameObject.name == "personagem principal")
+        {
+            Debug.Log("Collision detected");
+            SceneManager.LoadScene("Level 2");
+        }
 
-        if(collisionGameObject.name == "Player")
-        {
-            LoadScene();
-        }
-    }
-
-    void LoadScene()
-    {
-        if (useIntegerToLoadLevel)
-        {
-            SceneManager.LoadScene(iLevelToLoad);
-        }
-        else
-        {
-            SceneManager.LoadScene(sLevelToLoad);
-        }
     }
 }

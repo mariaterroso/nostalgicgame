@@ -14,17 +14,17 @@ public class CameraManager : MonoBehaviour
     private Vector3 cameraFollowVelocity = Vector3.zero;
     private Vector3 cameraVectorPosition;
 
-    [SerializeField] float cameraCollisionOffset = 0.2f;
-    [SerializeField] float minCollisionOffset = 0.2f;
-    [SerializeField] float cameraCollisionRadius = 2;
+   // [SerializeField] float cameraCollisionOffset = 0.2f;
+   // [SerializeField] float minCollisionOffset = 0.2f;
+    //[SerializeField] float cameraCollisionRadius = 2;
     [SerializeField] float cameraFollowSpeed = 0.2f;
-    [SerializeField] float cameraLookSpeed = 2;
-    [SerializeField] float cameraPivotSpeed = 2;
+   // [SerializeField] float cameraLookSpeed = 2;
+    //[SerializeField] float cameraPivotSpeed = 2;
 
     [SerializeField] float lookAngle;
     [SerializeField] float pivotAngle;
     [SerializeField] float minPivotAngle = -35;
-    [SerializeField] float maxPivotAngle = 35;
+    //[SerializeField] float maxPivotAngle = 35;
 
     private void Awake()
     {
