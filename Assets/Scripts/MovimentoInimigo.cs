@@ -12,7 +12,7 @@ public class MovimentoInimigo : MonoBehaviour
     void Start()
     {
         min = transform.position.x;
-        max = transform.position.x + 0.5f;
+        max = transform.position.x + 3.5f;
     }
 
     // Update is called once per frame
