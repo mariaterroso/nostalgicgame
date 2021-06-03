@@ -41,7 +41,7 @@ public class InputManager : MonoBehaviour
             playerControls.PlayerActions.B.canceled += i => b_Input = false;
 
             playerControls.PlayerActions.X.performed += i => x_Input = true;
-            //playerControls.PlayerActions.X.canceled += i => x_Input = false;
+            playerControls.PlayerActions.X.canceled += i => x_Input = false;
 
             playerControls.PlayerActions.Jump.performed += i => jump_Input = true;
         }
