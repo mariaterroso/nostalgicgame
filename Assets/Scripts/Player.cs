@@ -22,9 +22,6 @@ public class Player : MonoBehaviour
 
     Quaternion jogadororeintacaooriginal;
 
-    [SerializeField]
-    int vida = 3;
-
     [SerializeField] GameObject porta;
 
     // Start is called before the first frame update
@@ -57,20 +54,6 @@ public class Player : MonoBehaviour
             porta.SetActive(false);
         }
 
-        if (tag == "Player")
-        {
-            vida--;
-            if (vida == 0)
-            {
-                if (other.gameObject.tag == "Indestrutivel")
-                {
-                    Destroy(gameObject);
-                    SceneManager.LoadScene("GameOver");
-
-                }
-            }
-        }
-
         if (other.CompareTag("Som"))
         {
             other.GetComponent<AudioSource>().Play();
@@ -96,7 +79,7 @@ public class Player : MonoBehaviour
     void AtualizaPontos()
     {
         pontos++;
-        pontosTexto.text = "Pontos: " + pontos;
+        pontosTexto.text = "Points: " + pontos;
         if (GameObject.FindGameObjectsWithTag("Coletavel").Length <= 0)
         {
             vitoriatexto.SetActive(true);
