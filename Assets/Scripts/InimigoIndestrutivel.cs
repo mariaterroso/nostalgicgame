@@ -14,10 +14,13 @@ public class InimigoIndestrutivel : MonoBehaviour
     [SerializeField]
     int vidaplayer = 3;
 
+    [SerializeField]
+    float force = 100f;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        GetComponent<Rigidbody>().AddForce(Vector3.up * force);
     }
 
     // Update is called once per frame
@@ -34,20 +37,15 @@ public class InimigoIndestrutivel : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision collision)
     {
-        if(tag == "Indestrutivel")
+
+        if (tag == "Player")
         {
-            vidaplayer--;
-            if (vidaplayer == 0)
-            {
-                if (other.gameObject.tag == "Player")
-                {
-                    Destroy(other.gameObject);
-                    SceneManager.LoadScene("GameOver");
-                }
-            }
-              
+            Destroy(gameObject);
+            Interface.gameover = true;
         }
+
+        Destroy(gameObject);
     }
 }

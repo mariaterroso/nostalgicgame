@@ -8,7 +8,12 @@ public class Player : MonoBehaviour
 {
 
     [SerializeField]
-    GameObject fogo;
+    Rigidbody projectil;
+
+    [SerializeField]
+    float forcaDisparo = 500;
+
+    private bool disparar = true;
 
     int pontos = 0;
 
@@ -32,7 +37,18 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
-   
+    private void Update()
+    {
+        if (Input.GetButton("Fire1") && disparar)
+        {
+            Rigidbody disparo = Instantiate(projectil, transform.position, transform.rotation) as Rigidbody;
+            disparo.AddForce(transform.forward * forcaDisparo);
+            disparar = false;
+        }else if (Input.GetButtonUp("Fire1"))
+        {
+            disparar = true;
+        }
+    }
 
     void OnTriggerEnter(Collider other)
     {

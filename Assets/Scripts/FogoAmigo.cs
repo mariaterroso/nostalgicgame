@@ -5,7 +5,7 @@ using UnityEngine;
 public class FogoAmigo : MonoBehaviour
 {
     [SerializeField]
-    float force = 100f;
+    float force = 10f;
 
     // Start is called before the first frame update
     void Start()
