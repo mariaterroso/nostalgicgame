@@ -4,20 +4,17 @@ using UnityEngine;
 
 public class levelMovement : MonoBehaviour
 {
-    float min = 2f;
-
-    float max = 3f;
-
+    float speed = 1f;
     // Start is called before the first frame update
     void Start()
     {
-        min = transform.position.y;
-        max = transform.position.y + 3.5f;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(Mathf.PingPong(Time.time * 3, max - min) + min, transform.position.z, transform.position.x);
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(-20f, 0f, 0f), speed * Time.deltaTime);
+     
     }
 }
