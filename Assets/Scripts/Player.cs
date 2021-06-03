@@ -8,9 +8,6 @@ public class Player : MonoBehaviour
 {
 
     [SerializeField]
-    float velocidade = 3f;
-
-    [SerializeField]
     GameObject fogo;
 
     int pontos = 0;
@@ -99,7 +96,7 @@ public class Player : MonoBehaviour
     void AtualizaPontos()
     {
         pontos++;
-        pontosTexto.text = "Pontos" + pontos;
+        pontosTexto.text = "Pontos: " + pontos;
         if (GameObject.FindGameObjectsWithTag("Coletavel").Length <= 0)
         {
             vitoriatexto.SetActive(true);
