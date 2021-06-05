@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] int vidaplayer = 3;
 
     [SerializeField]
     Rigidbody projectil;
@@ -78,6 +79,7 @@ public class Player : MonoBehaviour
         {
             other.GetComponent<AudioSource>().Play();
         }
+
     }
 
     private void OnTriggerExit(Collider other)
@@ -102,4 +104,19 @@ public class Player : MonoBehaviour
             Time.timeScale = 0f;
         }
     }
-}
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        vidaplayer--;
+        if (vidaplayer == 0)
+        {
+            if (collision.gameObject.tag == "Indestrutivel")
+            {
+                Destroy(gameObject);
+                Interface.gameover = true;
+            }
+
+            Destroy(collision.gameObject);
+        } 
+    }
+ }

@@ -407,7 +407,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a13b095669e9a8549b8f6c549bb66ff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fogo: {fileID: 0}
+  vidaplayer: 3
+  projectil: {fileID: 0}
+  forcaDisparo: 500
   pontosTexto: {fileID: 0}
   vitoriatexto: {fileID: 0}
   porta: {fileID: 0}
