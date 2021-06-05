@@ -7,14 +7,14 @@ using UnityEngine.SceneManagement;
 public class Interface : MonoBehaviour
 {
     public static bool gameover = false;
-    [SerializeField] GameObject panel;
+    [SerializeField] GameObject Panel;
 
 
     void Update()
     {
         if (gameover)
         {
-            panel.SetActive(true);
+            Panel.SetActive(true);
             Time.timeScale = 0f;
         }
     }
@@ -27,7 +27,7 @@ public class Interface : MonoBehaviour
     public void ReiniciarJogo()
     {
         Time.timeScale = 1f;
-        panel.SetActive(false);
+        Panel.SetActive(false);
         gameover = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

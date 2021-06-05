@@ -63,7 +63,6 @@ public class Player : MonoBehaviour
             transform.position = jogadorposicaooriginal;
             transform.rotation = jogadororeintacaooriginal;
 
-            porta.SetActive(true);
         }
         else if (other.CompareTag("Coletavel"))
         {

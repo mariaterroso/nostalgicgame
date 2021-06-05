@@ -48,6 +48,7 @@ public class InimigoIndestrutivel : MonoBehaviour
             }
 
             Destroy(other.gameObject);
+            Interface.gameover = true;
         }
     }
 }
