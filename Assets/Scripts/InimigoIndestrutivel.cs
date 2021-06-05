@@ -12,7 +12,7 @@ public class InimigoIndestrutivel : MonoBehaviour
     float Tempoquepassou = 3f;
 
     [SerializeField]
-    int vidaplayer = 3;
+    int vidainimigo = 3;
 
     [SerializeField]
     float force = 100f;
@@ -37,15 +37,17 @@ public class InimigoIndestrutivel : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+        private void OnTriggerEnter(Collider other)
     {
-
-        if (tag == "Player")
+        vidainimigo--;
+        if (vidainimigo == 0)
         {
-            Destroy(gameObject);
-            Interface.gameover = true;
-        }
+            if (other.gameObject.tag == "DisparoAmigo")
+            {
+                Destroy(gameObject);
+            }
 
-        Destroy(gameObject);
+            Destroy(other.gameObject);
+        }
     }
 }
