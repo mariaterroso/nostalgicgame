@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] int vidaplayer = 3;
 
     [SerializeField]
     Rigidbody projectil;
@@ -45,7 +44,8 @@ public class Player : MonoBehaviour
             Rigidbody disparo = Instantiate(projectil, transform.position, transform.rotation) as Rigidbody;
             disparo.AddForce(transform.forward * forcaDisparo);
             disparar = false;
-        }else if (Input.GetButtonUp("Fire1"))
+        }
+        else if (Input.GetButtonUp("Fire1"))
         {
             disparar = true;
         }
@@ -105,18 +105,4 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        vidaplayer--;
-        if (vidaplayer == 0)
-        {
-            if (collision.gameObject.tag == "Indestrutivel")
-            {
-                Destroy(gameObject);
-                Interface.gameover = true;
-            }
-
-            Destroy(collision.gameObject);
-        } 
-    }
- }
+}
