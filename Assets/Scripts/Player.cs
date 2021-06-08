@@ -97,11 +97,6 @@ public class Player : MonoBehaviour
     {
         pontos++;
         pontosTexto.text = "Collectibles: " + pontos + "/1";
-        if (GameObject.FindGameObjectsWithTag("Coletavel").Length <= 0)
-        {
-            vitoriatexto.SetActive(true);
-            Time.timeScale = 0f;
-        }
     }
 
 }

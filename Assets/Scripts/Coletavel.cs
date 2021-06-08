@@ -29,8 +29,11 @@ public class Coletavel : MonoBehaviour
     {
         if (tag == "Coletavel")
         {
+          
             if (collision.gameObject.tag == "Player")
             {
+                AudioSource audio = GetComponent<AudioSource>();
+                audio.Play();
                 Destroy(gameObject);
             }
         }
