@@ -16,4 +16,9 @@ public class MainMenu : MonoBehaviour
         UnityEngine.Debug.Log("QUIT");
         Application.Quit();
     }
+
+    public void FirstMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
 }
