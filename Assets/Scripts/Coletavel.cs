@@ -7,10 +7,14 @@ public class Coletavel : MonoBehaviour
 
     [SerializeField] float duracao = 10f;
 
+    [SerializeField] private AudioSource som;
+    private bool destruir = false;
+
     // Start is called before the first frame update
     void Start()
     {
         Destroy(gameObject, duracao);
+        som = som.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -32,10 +36,17 @@ public class Coletavel : MonoBehaviour
           
             if (collision.gameObject.tag == "Player")
             {
-                AudioSource audio = GetComponent<AudioSource>();
-                audio.Play();
                 Destroy(gameObject);
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            som.Play();
+            destruir = true;
         }
     }
 }

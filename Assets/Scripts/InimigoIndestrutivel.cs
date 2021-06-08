@@ -7,6 +7,9 @@ public class InimigoIndestrutivel : MonoBehaviour
     [SerializeField]
     GameObject inimigo1;
 
+    [SerializeField] private AudioSource som;
+    private bool destruir = false;
+
     public float tempodEespera = 1f;
 
     float Tempoquepassou = 3f;
@@ -21,6 +24,8 @@ public class InimigoIndestrutivel : MonoBehaviour
     void Start()
     {
         GetComponent<Rigidbody>().AddForce(Vector3.up * force);
+
+        som = som.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -34,6 +39,11 @@ public class InimigoIndestrutivel : MonoBehaviour
                 Instantiate(inimigo1, transform.position, transform.rotation);
                 Tempoquepassou = 0f;
             }
+        }
+
+        if (destruir)
+        {
+            if (!som.isPlaying) Destroy(gameObject);
         }
     }
 
@@ -49,6 +59,12 @@ public class InimigoIndestrutivel : MonoBehaviour
 
             Destroy(other.gameObject);
             Interface.gameover = true;
+        }
+
+        if (other.gameObject.CompareTag("Player"))
+        {
+            som.Play();
+            destruir = true;
         }
     }
 }
