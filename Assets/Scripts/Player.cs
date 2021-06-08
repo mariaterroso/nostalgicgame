@@ -96,7 +96,7 @@ public class Player : MonoBehaviour
     void AtualizaPontos()
     {
         pontos++;
-        pontosTexto.text = "Collectibles: " + pontos + "/3";
+        pontosTexto.text = "Collectibles: " + pontos + "/1";
         if (GameObject.FindGameObjectsWithTag("Coletavel").Length <= 0)
         {
             vitoriatexto.SetActive(true);
