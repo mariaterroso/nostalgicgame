@@ -8,12 +8,14 @@ public class InimigoDestrutivel : MonoBehaviour
 
     NavMeshAgent agente;
     Transform alvo;
+    [SerializeField] private AudioSource som;
 
     // Start is called before the first frame update
     void Start()
     {
         agente = GetComponent<NavMeshAgent>();
         alvo = GameObject.FindGameObjectWithTag("Player").transform;
+        som = som.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -28,6 +30,14 @@ public class InimigoDestrutivel : MonoBehaviour
         {
             Debug.Log("Já foste");
             Interface.gameover = true;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            som.Play();
         }
     }
 }
