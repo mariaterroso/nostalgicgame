@@ -11,6 +11,8 @@ TagManager:
   - Destrutivel
   - Indestrutivel
   - Porta
+  - Som
+  - SomColetavel
   layers:
   - Default
   - TransparentFX
