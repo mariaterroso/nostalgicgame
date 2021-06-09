@@ -23,7 +23,7 @@ public class CameraManager : MonoBehaviour
 
     [SerializeField] float lookAngle;
     [SerializeField] float pivotAngle;
-    [SerializeField] float minPivotAngle = -35;
+    //[SerializeField] float minPivotAngle = -35;
     //[SerializeField] float maxPivotAngle = 35;
 
     private void Awake()
