@@ -70,10 +70,8 @@ public class Player : MonoBehaviour
             porta.SetActive(false);
         }
 
-        if (other.CompareTag("Som"))
-        {
-            other.GetComponent<AudioSource>().Play();
-        }
+
+        // metemos os sons mas por alguma razão os sons não estão a ser ativados, o mesmo acontece com o script dos inimigos
         if (other.CompareTag("SomColetavel"))
         {
             other.GetComponent<AudioSource>().Play();
@@ -83,10 +81,6 @@ public class Player : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Som"))
-        {
-            other.GetComponent<AudioSource>().Stop();
-        }
         if (other.CompareTag("SomColetavel"))
         {
             other.GetComponent<AudioSource>().Stop();
